@@ -40,7 +40,6 @@ execute() {
     "$@"
 }
 
-
 log "$script_dir -- $filter"
 
 # start a new process and cd's into the dir
