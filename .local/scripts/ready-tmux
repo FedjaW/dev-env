@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# this script checks if an executable ".ready-tmux.sh" script is in the current folder
+# if it is, then execute it
+# if not, then look for an executable ".ready-tmux.sh" in the $HOME dir and execute that
+
+# what this is for: every folder can define an own ready-tmux.sh script to customize a specific tmux layout/setup
+# 		    and in the $HOME dir a default tmux layout/setup can be defined
+
+# this script needs to be in the $PATH env so that is executable from anywhere on the machine
+# this is done via the dev-env.sh script by this line <copy_dir .local $HOME/.local>
+# and .local is in my PATH because of the .zshrc configuration
+# and it must be executable: <chmod +x ready-tmux>
+
+
+# -x means is it executable?
+if [[ -x ".ready-tmux.sh" ]]; then
+	./.ready-tmux.sh
+elif [[ -x "$HOME/.ready-tmux.sh" ]]; then
+	$HOME/.ready-tmux.sh
+fi
+clear

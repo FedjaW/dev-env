@@ -65,4 +65,6 @@ copy_dir () {
 }
 
 copy_dir .config $HOME/.config
+copy_dir .local $HOME/.local
 # copy_file .test $HOME
+
